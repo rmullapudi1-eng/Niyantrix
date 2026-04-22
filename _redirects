@@ -1,0 +1,10 @@
+# Netlify Redirects — Niyantrix
+/home          /index.html       301
+/services      /services.html    301
+/rcm           /rcm-solutions.html 301
+/ar            /ar-collections.html 301
+/prior-auth    /prior-authorization.html 301
+/about         /about.html       301
+/faq           /faq.html         301
+/contact       /contact.html     301
+/web-design    /web-design.html  301
