@@ -731,7 +731,7 @@ p  { color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
 
 /* ── Page Hero (inner pages) ── */
 .page-hero {
-  padding: 130px 0 80px;
+  padding: 140px 0 80px;
   background: linear-gradient(150deg, var(--navy) 0%, var(--surface) 60%, var(--surface2) 100%);
   border-bottom: 1px solid rgba(37,99,235,0.18);
   position: relative;
@@ -740,8 +740,7 @@ p  { color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
 .page-hero::before {
   content: '';
   position: absolute;
-  top: -40%;
-  right: -5%;
+  top: -40%; right: -5%;
   width: 600px; height: 500px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 65%);
@@ -753,9 +752,62 @@ p  { color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(37,99,235,0.4), rgba(13,148,136,0.3), transparent);
 }
-.page-hero-content { max-width: 680px; position: relative; z-index: 1; }
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.page-hero-content { position: relative; z-index: 1; }
 .page-hero h1 { margin-bottom: 1rem; }
-.page-hero p { font-size: 1.15rem; max-width: 540px; }
+.page-hero p { font-size: 1.1rem; }
+.page-hero-aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.hero-stat-card {
+  background: rgba(11,21,41,0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(37,99,235,0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.hero-stat-card:hover {
+  border-color: rgba(37,99,235,0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3), var(--glow-blue);
+}
+.hero-stat-card .stat-val {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--blue-light), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-stat-card .stat-val.gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-stat-card .stat-lbl {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .page-hero-grid { grid-template-columns: 1fr; }
+  .page-hero-aside { grid-template-columns: 1fr 1fr; }
+}
 
 /* ── FAQ ── */
 .faq-item {
