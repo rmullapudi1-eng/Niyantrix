@@ -168,19 +168,17 @@ p  { color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  position: relative;
   height: 72px;
   gap: 1.5rem;
 }
-/* Logo floats independently — does NOT participate in flex layout */
+/* Logo fixed to absolute top-left corner of viewport — fully independent */
 .nav-logo {
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  top: 0;
+  z-index: 1100;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .nav-logo-img {
   height: 168px;
